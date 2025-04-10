@@ -1,5 +1,5 @@
 import './style.css'
-import Trash from '../../assets/react.svg'
+import Trash from '../../assets/lixeira.png'
 
 function home() {
 
