@@ -1,23 +1,21 @@
 import './style.css'
 import Trash from '../../assets/lixeira.png'
+import api from '../../services/api'
+import { use } from 'react'
 
 function home() {
 
-  const users = [
-    {
-      id:'askdkjnfasd56554',
-      name: 'Edir',
-      email:'edir@gmail.com',
-      age:26
-    },
+  const users = []
 
-    {
-      id:'fgkyejyeigfs48945',
-      name: 'João Lucas',
-      email:'joao@gmail.com',
-      age:23
-    }
-  ]
+  async function getUsers(){
+    users = await api.get('/users')
+    
+  }
+
+  useEffect(() => {
+    getUsers()
+  }, [])
+  console.log(users)
 
   return (
   <div>
